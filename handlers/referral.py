@@ -91,7 +91,7 @@ async def confirm_and_send(callback: CallbackQuery, state: FSMContext):
 
     conn = get_db_connection()
     c = conn.cursor()
-    c.execute("SELECT telegram_id FROM users WHERE is_registered = 1")
+    c.execute("SELECT telegram_id FROM users")
     users = c.fetchall()
     conn.close()
 
